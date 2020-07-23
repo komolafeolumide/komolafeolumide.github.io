@@ -7,6 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Icon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
@@ -24,8 +28,13 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Light box CSS and JS -->
+    <link rel="stylesheet" type="text/css" href="css/lightbox.css">
+    <script type="text/javascript" src="js/lightbox-plus-jquery.js">
+    </script>
   </head>
-  <body class="single-page index-page">
+  <body onload="slider()" class="single-page index-page">
       <header class="site-header">
           <div class="top-header-bar">
               <div class="container">
@@ -42,7 +51,7 @@
 
                       <div class="col-12 col-lg-4 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
                           <div class="donate-btn">
-                              <a href="#">Store</a>
+                              <a href="store.html">Store</a>
                           </div><!-- .donate-btn -->
                       </div><!-- .col -->
                   </div><!-- .row -->
@@ -63,8 +72,8 @@
                                   <li><a href="about.html">About</a></li>
                                   <li><a href="partner.html">Partner</a></li>
                                   <li><a href="portfolio.html">Gallery</a></li>
-                                  <li><a href="news.html">Blog</a></li>
-                                  <li><a href="contact.html">Contact</a></li>
+                                  <li><a href="https://victoriamichaels.wordpress.com" target="_blank">Blog</a></li>
+                                  <li><a href="contact-form.html">Contact</a></li>
                               </ul>
                           </nav><!-- .site-navigation -->
 
@@ -83,7 +92,7 @@
     <div class="swiper-container hero-slider">
         <div class="swiper-wrapper">
             <div class="swiper-slide hero-content-wrap">
-                <img src="images/hero.jpg" alt="Dr. Victoria Michaels">
+                <img src="images/hero.jpg" id="slideImg">
 
                 <div class="hero-content-overlay position-absolute w-100 h-100">
                     <div class="container h-100">
@@ -92,90 +101,35 @@
                                 <header class="entry-header">
                                     <h1>Victoria</h1>
                                     <h4>Michaels Ministry</h4>
+                                    <p> Prophetic Voices to the Nations. Bridging the Gap. </p>
                                 </header><!-- .entry-header -->
 
-                                <div class="entry-content mt-4">
-                                    <p>Prophetic Voices to the Nations. Bridging the Gap. </p>
-                                </div><!-- .entry-content -->
+                                <script>
+                                var slideImg = document.getElementById("slideImg");
+                                var images = new Array(
+                                      "images/hero.jpg",
+                                      "images/hero-2.jpg",
+                                      "images/hero-3.jpg"
+                                );
+                                var len = images.length;
+                                var i = 0;
 
-                                <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-                                    <a href="news.html" class="btn gradient-bg mr-2">Blog</a>
-                                    <a href="store.html" class="btn orange-border">Visit Store</a>
-                                </footer><!-- .entry-footer -->
+                                function slider (){
+                                  if (i>len-1){
+                                    i=0;
+                                  }
+                                  slideImg.src =images[i];
+                                  i++;
+                                  setTimeout('slider()',3000);
+                                }
+                                </script>
                             </div><!-- .col -->
                         </div><!-- .row -->
                     </div><!-- .container -->
                 </div><!-- .hero-content-overlay -->
             </div><!-- .hero-content-wrap -->
-
-            <div class="swiper-slide hero-content-wrap">
-                <img src="images/hero2.jpg" alt="Dr. Victoria Michaels">
-
-                <div class="hero-content-overlay position-absolute w-100 h-100">
-                    <div class="container h-100">
-                        <div class="row h-100">
-                            <div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
-                                <header class="entry-header">
-                                  <h1>Victoria</h1>
-                                  <h4>Michaels Ministry</h4>
-                              </header><!-- .entry-header -->
-
-                              <div class="entry-content mt-4">
-                                  <p>Prophetic Voices to the Nations. Bridging the Gap. </p>
-                              </div><!-- .entry-content -->
-
-                              <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-                                  <a href="news.html" class="btn gradient-bg mr-2">Blog</a>
-                                  <a href="store.html" class="btn orange-border">Visit Store</a>
-                                </footer><!-- .entry-footer -->
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .container -->
-                </div><!-- .hero-content-overlay -->
-            </div><!-- .hero-content-wrap -->
-
-            <div class="swiper-slide hero-content-wrap">
-                <img src="images/hero1.jpg" alt="Books by Victoria Michaels">
-
-                <div class="hero-content-overlay position-absolute w-100 h-100">
-                    <div class="container h-100">
-                        <div class="row h-100">
-                            <div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
-                                <header class="entry-header">
-                                    <h1>Explore</h1>
-                                    <h4>Our Store</h4>
-                                </header><!-- .entry-header -->
-
-                                <div class="entry-content mt-4">
-                                    <p>Enrich Your Mind. Order a Copy of Our Book Today!</p>
-                                </div><!-- .entry-content -->
-
-                                <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
-                                    <a href="store.html" class="btn gradient-bg mr-2">Visit Store</a>
-                                    <a href="#" class="btn orange-border">Read More</a>
-                                </footer><!-- .entry-footer -->
-                            </div><!-- .col -->
-                        </div><!-- .row -->
-                    </div><!-- .container -->
-                </div><!-- .hero-content-overlay -->
-            </div><!-- .hero-content-wrap -->
-        </div><!-- .swiper-wrapper -->
-
-        <div class="pagination-wrap position-absolute w-100">
-            <div class="container">
-                <div class="swiper-pagination"></div>
-            </div><!-- .container -->
-        </div><!-- .pagination-wrap -->
-
-        <!-- Add Arrows -->
-        <div class="swiper-button-next flex justify-content-center align-items-center">
-            <span><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1171 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg></span>
-        </div>
-
-        <div class="swiper-button-prev flex justify-content-center align-items-center">
-            <span><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1203 544q0 13-10 23l-393 393 393 393q10 10 10 23t-10 23l-50 50q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23z"/></svg></span>
-        </div>
-    </div><!-- .hero-slider -->
+      </div><!-- .hero-slider -->
+    </div>
 
     <div class="home-page-icon-boxes">
         <div class="container">
@@ -183,51 +137,39 @@
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
                     <div class="icon-box active">
                         <figure class="d-flex justify-content-center">
-                            <img src="images/hands-gray.png" alt="">
-                            <img src="images/hands-white.png" alt="">
+                            <img src="images/hands-gray.png" alt="Welcome to victoriamichaels.org">
+                            <img src="images/hands-white.png" alt="Welcome">
                         </figure>
 
                         <header class="entry-header">
-                            <h3 class="entry-title">Become a Volunteer</h3>
+                            <h3 class="entry-title">Welcome</h3>
                         </header>
-
-                        <div class="entry-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. </p>
-                        </div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
                     <div class="icon-box">
                         <figure class="d-flex justify-content-center">
-                            <img src="images/donation-gray.png" alt="">
-                            <img src="images/donation-white.png" alt="">
+                            <img src="images/donation-gray.png" alt="Worship with us">
+                            <img src="images/donation-white.png" alt="Join us in Worship">
                         </figure>
 
                         <header class="entry-header">
-                            <h3 class="entry-title">Dance & Music</h3>
+                            <h3 class="entry-title">Worship with Us</h3>
                         </header>
-
-                        <div class="entry-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. </p>
-                        </div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
                     <div class="icon-box">
                         <figure class="d-flex justify-content-center">
-                            <img src="images/charity-gray.png" alt="">
-                            <img src="images/charity-white.png" alt="">
+                            <img src="images/charity-gray.png" alt="Partner With Victoria Michaels">
+                            <img src="images/charity-white.png" alt="Partner with Us">
                         </figure>
 
                         <header class="entry-header">
-                            <h3 class="entry-title">Online Conference</h3>
+                            <h3 class="entry-title">Partner With Us</h3>
                         </header>
-
-                        <div class="entry-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. </p>
-                        </div>
                     </div>
                 </div>
             </div><!-- .row -->
@@ -237,16 +179,16 @@
     <div class="home-page-welcome">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-6 order-2 order-lg-1">
+                <div class="col-12 col-lg-7 order-1 order-lg-2">
                     <div class="welcome-content">
                         <header class="entry-header">
                             <h2 class="entry-title">About Dr. Victoria Michaels</h2>
                         </header><!-- .entry-header -->
 
                         <div class="entry-content mt-5">
-                            <p>Dr. Victoria Michaels, a sought-after international speaker and empowerment specialist, is a visionary and mastermind who focuses on empowering individuals to walk in their destiny. Her profound approach reaches persons from various socio-economic backgrounds, races, nationalities and creed. </p>
-                            <p>She is also a Pastor, wife, mother, mentor, entrepreneur, television host, author, fashion designer, song-writer, and teacher whose life is reaching many around the world both in the Christendom and the Market place.</p>
-                            <p>Dr. Michaels obtained a Bachelors in Biblical Studies emphasis in Christian Counseling and she is currently pursuing her Masters in Christian Theology. She then earned a diploma in Practical Theology from the International Seminary in Florida, USA. She is also a Computer Network Specialist. She is the recipient of various awards such as an Honorary Doctorate in Divinity from St Thomas Christian University.</p>
+                            <p align="justify">Dr. Victoria Michaels, a sought-after international speaker and empowerment specialist, is a visionary and mastermind who focuses on empowering individuals to walk in their destiny. Her profound approach reaches persons from various socio-economic backgrounds, races, nationalities and creed. </p>
+                            <p align="justify">She is also a Pastor, wife, mother, mentor, entrepreneur, television host, author, fashion designer, song-writer, and teacher whose life is reaching many around the world both in the Christendom and the Market place.</p>
+                            <p align="justify">Dr. Michaels obtained a Bachelors in Biblical Studies emphasis in Christian Counseling and she is currently pursuing her Masters in Christian Theology. She then earned a diploma in Practical Theology from the International Seminary in Florida, USA. She is also a Computer Network Specialist. She is the recipient of various awards such as an Honorary Doctorate in Divinity from St Thomas Christian University.</p>
                         </div><!-- .entry-content -->
 
                         <div class="entry-footer mt-5">
@@ -255,7 +197,7 @@
                     </div><!-- .welcome-content -->
                 </div><!-- .col -->
 
-                <div class="col-12 col-lg-6 mt-4 order-1 order-lg-2">
+                <div class="col-12 col-lg-5 mt-4 order-2 order-lg-1">
                     <img src="images/welcome.jpg" alt="About Dr. Victoria Michaels">
                 </div><!-- .col -->
             </div><!-- .row -->
@@ -273,84 +215,84 @@
 
                         <div class="event-wrap d-flex flex-wrap justify-content-between">
                             <figure class="m-0">
-                                <img src="images/event-1.jpg" alt="">
+                                <img src="images/events/thumbnail/1.jpg" alt="Womanhood virtual conference">
                             </figure>
 
                             <div class="event-content-wrap">
                                 <header class="entry-header d-flex flex-wrap align-items-center">
-                                    <h3 class="entry-title w-100 m-0"><a href="#">Fundraiser for Kids</a></h3>
+                                    <h3 class="entry-title w-100 m-0"><a href="images/events/1.jpg" data-lightbox="1" data-title="Womanhood: A Virtual Conference"> Womanhood Virtual Conference</a></h3>
 
                                     <div class="posted-date">
-                                        <a href="#">Aug 25, 2018 </a>
+                                        <a class="fa fa-calendar"> July 21<sup>st</sup> - 23<sup>rd</sup> </a>
                                     </div><!-- .posted-date -->
 
                                     <div class="cats-links">
-                                        <a href="#">Ball Room New York</a>
+                                        <a class="fa fa-bell"> 9am/2PM EST | 2PM/7PM NGN/UK</a>
                                     </div><!-- .cats-links -->
                                 </header><!-- .entry-header -->
 
                                 <div class="entry-content">
-                                    <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
+                                    <p class="m-0">Womanhood is a virtual conference tagged: <b>Her Strength! Her Influence.</b> It shall be streaming Live on our various media platforms. </p>
                                 </div><!-- .entry-content -->
 
                                 <div class="entry-footer">
-                                    <a href="#">Read More</a>
+                                    <a href="images/events/1.jpg" data-lightbox="1" data-title="Womanhood: A Virtual Conference">See flier for details</a>
                                 </div><!-- .entry-footer -->
                             </div><!-- .event-content-wrap -->
                         </div><!-- .event-wrap -->
 
                         <div class="event-wrap d-flex flex-wrap justify-content-between">
                             <figure class="m-0">
-                                <img src="images/event-2.jpg" alt="">
+                                <img src="images/events/thumbnail/2.jpg" alt="5 Days Prayers and Prophetic Revival">
                             </figure>
 
                             <div class="event-content-wrap">
                                 <header class="entry-header d-flex flex-wrap align-items-center">
-                                    <h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+                                    <h3 class="entry-title w-100 m-0"><a href="images/events/2.jpg" data-lightbox="2" data-title="5 Days Prayers and Prophetic Revival">5 Days Prayers and Prophetic Revival</a></h3>
 
                                     <div class="posted-date">
-                                        <a href="#">Aug 25, 2018 </a>
+                                        <a class="fa fa-calendar"> July 1<sup>st</sup> - 5<sup>th</sup> </a>
                                     </div><!-- .posted-date -->
 
                                     <div class="cats-links">
-                                        <a href="#">Ball Room New York</a>
+                                        <a class="fa fa-bell"> 2PM EST | 7PM NGN/UK</a>
                                     </div><!-- .cats-links -->
                                 </header><!-- .entry-header -->
 
                                 <div class="entry-content">
-                                    <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
+                                    <p class="m-0">The 5 Days Prayer & Prophetic Revival would be broadcast live on Zoom, Facebook, YouTube, Instagram, and Periscope.</p>
                                 </div><!-- .entry-content -->
 
                                 <div class="entry-footer">
-                                    <a href="#">Read More</a>
+                                    <a href="images/events/2.jpg" data-lightbox="2" data-title="5 Days Prayers and Prophetic Revival">See flier for details</a>
                                 </div><!-- .entry-footer -->
                             </div><!-- .event-content-wrap -->
                         </div><!-- .event-wrap -->
 
                         <div class="event-wrap d-flex flex-wrap justify-content-between">
                             <figure class="m-0">
-                                <img src="images/event-3.jpg" alt="">
+                                <img src="images/events/thumbnail/3.jpg" alt="The Conversation with Victoria Michaels">
                             </figure>
 
                             <div class="event-content-wrap">
                                 <header class="entry-header d-flex flex-wrap align-items-center">
-                                    <h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+                                    <h3 class="entry-title w-100 m-0"><a href="images/events/3.jpg" data-lightbox="3" data-title="The Conversation">The Conversation</a></h3>
 
                                     <div class="posted-date">
-                                        <a href="#">Aug 25, 2018 </a>
+                                        <a class="fa fa-calendar"> Every Saturday </a>
                                     </div><!-- .posted-date -->
 
                                     <div class="cats-links">
-                                        <a href="#">Ball Room New York</a>
+                                        <a class="fa fa-bell"> 1PM NY | 2PM UK | 7PM NGN</a>
                                     </div><!-- .cats-links -->
                                 </header><!-- .entry-header -->
 
                                 <div class="entry-content">
-                                    <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
+                                    <p class="m-0">Join The Conversation with Dr. Victoria Michaels-Jefferson. It shall be streaming Live on our various media platforms. </p>
                                 </div><!-- .entry-content -->
 
                                 <div class="entry-footer">
-                                    <a href="#">Read More</a>
+                                    <a href="images/events/3.jpg" data-lightbox="3" data-title="The Conversation">See flier for details</a>
                                 </div><!-- .entry-footer -->
                             </div><!-- .event-content-wrap -->
                         </div><!-- .event-wrap -->
@@ -358,60 +300,96 @@
                 </div><!-- .col -->
 
                 <div class="col-12 col-lg-6">
-                    <div class="featured-cause">
-                        <div class="section-heading">
-                            <h2 class="entry-title">Featured Cause</h2>
-                        </div><!-- .section-heading -->
+                  <div class="upcoming-events">
+                      <div class="section-heading">
+                          <h2 class="entry-title">Programmes</h2>
+                      </div><!-- .section-heading -->
 
-                        <div class="cause-wrap d-flex flex-wrap justify-content-between">
-                            <figure class="m-0">
-                                <img src="images/featured-causes.jpg" alt="">
-                            </figure>
+                      <div class="event-wrap d-flex flex-wrap justify-content-between">
+                          <figure class="m-0">
+                              <img src="images/events/thumbnail/1.jpg" alt="Womanhood virtual conference">
+                          </figure>
 
-                            <div class="cause-content-wrap">
-                                <header class="entry-header d-flex flex-wrap align-items-center">
-                                    <h3 class="entry-title w-100 m-0"><a href="#">Fundraiser for Kids</a></h3>
+                          <div class="event-content-wrap">
+                              <header class="entry-header d-flex flex-wrap align-items-center">
+                                  <h3 class="entry-title w-100 m-0"><a href="images/events/1.jpg" data-lightbox="1" data-title="Womanhood: A Virtual Conference"> Womanhood Virtual Conference</a></h3>
 
-                                    <div class="posted-date">
-                                        <a href="#">Aug 25, 2018 </a>
-                                    </div><!-- .posted-date -->
+                                  <div class="posted-date">
+                                      <a class="fa fa-calendar"> July 21<sup>st</sup> - 23<sup>rd</sup> </a>
+                                  </div><!-- .posted-date -->
 
-                                    <div class="cats-links">
-                                        <a href="#">Ball Room New York</a>
-                                    </div><!-- .cats-links -->
-                                </header><!-- .entry-header -->
+                                  <div class="cats-links">
+                                      <a class="fa fa-bell"> 9am/2PM EST | 2PM/7PM NGN/UK</a>
+                                  </div><!-- .cats-links -->
+                              </header><!-- .entry-header -->
 
-                                <div class="entry-content">
-                                    <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris. Lorem ipsum dolor sit amet, consectetur.</p>
-                                </div><!-- .entry-content -->
+                              <div class="entry-content">
+                                  <p class="m-0">Womanhood is a virtual conference tagged: <b>Her Strength! Her Influence.</b> It shall be streaming Live on our various media platforms. </p>
+                              </div><!-- .entry-content -->
 
-                                <div class="entry-footer mt-5">
-                                    <a href="#" class="btn gradient-bg mr-2">Donate Now</a>
-                                </div><!-- .entry-footer -->
-                            </div><!-- .cause-content-wrap -->
+                              <div class="entry-footer">
+                                  <a href="images/events/1.jpg" data-lightbox="1" data-title="Womanhood: A Virtual Conference">See flier for details</a>
+                              </div><!-- .entry-footer -->
+                          </div><!-- .event-content-wrap -->
+                      </div><!-- .event-wrap -->
 
-                            <div class="fund-raised w-100">
-                                <div class="featured-fund-raised-bar barfiller">
-                                    <div class="tipWrap">
-                                        <span class="tip"></span>
-                                    </div><!-- .tipWrap -->
+                      <div class="event-wrap d-flex flex-wrap justify-content-between">
+                          <figure class="m-0">
+                              <img src="images/events/thumbnail/2.jpg" alt="5 Days Prayers and Prophetic Revival">
+                          </figure>
 
-                                    <span class="fill" data-percentage="83"></span>
-                                </div><!-- .fund-raised-bar -->
+                          <div class="event-content-wrap">
+                              <header class="entry-header d-flex flex-wrap align-items-center">
+                                  <h3 class="entry-title w-100 m-0"><a href="images/events/2.jpg" data-lightbox="2" data-title="5 Days Prayers and Prophetic Revival">5 Days Prayers and Prophetic Revival</a></h3>
 
-                                <div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
-                                    <div class="fund-raised-total mt-4">
-                                        Raised: $56 880
-                                    </div><!-- .fund-raised-total -->
+                                  <div class="posted-date">
+                                      <a class="fa fa-calendar"> July 1<sup>st</sup> - 5<sup>th</sup> </a>
+                                  </div><!-- .posted-date -->
 
-                                    <div class="fund-raised-goal mt-4">
-                                        Goal: $70 000
-                                    </div><!-- .fund-raised-goal -->
-                                </div><!-- .fund-raised-details -->
-                            </div><!-- .fund-raised -->
-                        </div><!-- .cause-wrap -->
-                    </div><!-- .featured-cause -->
-                </div><!-- .col -->
+                                  <div class="cats-links">
+                                      <a class="fa fa-bell"> 2PM EST | 7PM NGN/UK</a>
+                                  </div><!-- .cats-links -->
+                              </header><!-- .entry-header -->
+
+                              <div class="entry-content">
+                                  <p class="m-0">The 5 Days Prayer & Prophetic Revival would be broadcast live on Zoom, Facebook, YouTube, Instagram, and Periscope.</p>
+                              </div><!-- .entry-content -->
+
+                              <div class="entry-footer">
+                                  <a href="images/events/2.jpg" data-lightbox="2" data-title="5 Days Prayers and Prophetic Revival">See flier for details</a>
+                              </div><!-- .entry-footer -->
+                          </div><!-- .event-content-wrap -->
+                      </div><!-- .event-wrap -->
+
+                      <div class="event-wrap d-flex flex-wrap justify-content-between">
+                          <figure class="m-0">
+                              <img src="images/events/thumbnail/3.jpg" alt="The Conversation with Victoria Michaels">
+                          </figure>
+
+                          <div class="event-content-wrap">
+                              <header class="entry-header d-flex flex-wrap align-items-center">
+                                  <h3 class="entry-title w-100 m-0"><a href="images/events/3.jpg" data-lightbox="3" data-title="The Conversation">The Conversation</a></h3>
+
+                                  <div class="posted-date">
+                                      <a class="fa fa-calendar"> Every Saturday </a>
+                                  </div><!-- .posted-date -->
+
+                                  <div class="cats-links">
+                                      <a class="fa fa-bell"> 1PM NY | 2PM UK | 7PM NGN</a>
+                                  </div><!-- .cats-links -->
+                              </header><!-- .entry-header -->
+
+                              <div class="entry-content">
+                                  <p class="m-0">Join The Conversation with Dr. Victoria Michaels-Jefferson. It shall be streaming Live on our various media platforms. </p>
+                              </div><!-- .entry-content -->
+
+                              <div class="entry-footer">
+                                  <a href="images/events/3.jpg" data-lightbox="3" data-title="The Conversation">See flier for details</a>
+                              </div><!-- .entry-footer -->
+                          </div><!-- .event-content-wrap -->
+                      </div><!-- .event-wrap -->
+                  </div><!-- .upcoming-events -->
+              </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
     </div><!-- .home-page-events -->
@@ -419,9 +397,10 @@
     <div class="our-causes">
         <div class="container">
             <div class="row">
-                <div class="coL-12">
+                <div class="col-12">
                     <div class="section-heading">
                         <h2 class="entry-title">From Our Store</h2>
+                        <em>Swipe Left to See More</em>
                     </div><!-- .section-heading -->
                 </div><!-- .col -->
             </div><!-- .row -->
@@ -433,22 +412,22 @@
                             <div class="swiper-slide">
                                 <div class="cause-wrap">
                                     <figure class="m-0">
-                                        <img src="images/store-1.jpg" alt="Take Back Your Life">
+                                        <img src="images/store/1.jpg" alt="Take Back Your Life">
 
                                         <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-                                            <a href="#" class="btn gradient-bg mr-2">Order Now</a>
+                                            <a href="https://www.amazon.com/TAKE-BACK-YOUR-LIFE-Over-ebook/dp/B07VWK1T8K" class="btn gradient-bg mr-2" target="_blank"><i class="fa fa-amazon"></i> Order Now <i class="fa fa-external-link"></i></a>
                                         </div><!-- .figure-overlay -->
                                     </figure>
 
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title w-100 m-0"><a href="#">Take Back Your Life</a></h3>
+                                            <h3 class="entry-title w-100 m-0"><a href="store/take-back-your-life.html">Take Back Your Life</a> <font color="purple" size="3px">$9.99</font></h3>
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content">
-                                            <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
+                                            <p class="m-0">You have the power to turn your problems to favour you, through your positive perception of things. It's time to Fight for what is yours and take back what is yours!</p>
                                             <br>
-                                            <a href="#" class="btn gradient-bg mr-2">Order Now</a>
+                                            <a href="https://www.amazon.com/TAKE-BACK-YOUR-LIFE-Over-ebook/dp/B07VWK1T8K" class="btn gradient-bg mr-2" target="_blank"><i class="fa fa-amazon"></i> Order Now <i class="fa fa-external-link"></i></a>
                                         </div><!-- .entry-content -->
                                     </div><!-- .cause-content-wrap -->
                                 </div><!-- .cause-wrap -->
@@ -457,22 +436,22 @@
                             <div class="swiper-slide">
                                 <div class="cause-wrap">
                                     <figure class="m-0">
-                                        <img src="images/store-2.jpg" alt="">
+                                        <img src="images/store/2.jpg" alt="The Weapons of Our Victory">
 
                                         <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-                                            <a href="#" class="btn gradient-bg mr-2">Order Now</a>
+                                            <a href="https://www.amazon.com/Weapons-our-Victory-Victoria-Michaels/dp/B074ZLCZZ6" class="btn gradient-bg mr-2" target="_blank"><i class="fa fa-amazon"></i> Order Now <i class="fa fa-external-link"></i></a>
                                         </div><!-- .figure-overlay -->
                                     </figure>
 
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title w-100 m-0"><a href="#">Education for all</a></h3>
+                                            <h3 class="entry-title w-100 m-0"><a href="store\the-weapons-of-our-victory.html">The Weapons of Our Victory</a> <font color="purple" size="3px">$14.99</font></h3>
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content">
-                                            <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
+                                            <p class="m-0">"For the weapons of our warfare are not carnal but mighty through God to the pulling down of strongholds" <br> - 2 Corinthians 10:4 </p>
                                             <br>
-                                            <a href="#" class="btn gradient-bg mr-2">Order Now</a>
+                                            <a href="https://www.amazon.com/Weapons-our-Victory-Victoria-Michaels/dp/B074ZLCZZ6" class="btn gradient-bg mr-2" target="_blank"><i class="fa fa-amazon"></i> Order Now <i class="fa fa-external-link"></i></a>
                                         </div><!-- .entry-content -->
                                     </div><!-- .cause-content-wrap -->
                                 </div><!-- .cause-wrap -->
@@ -481,22 +460,22 @@
                             <div class="swiper-slide">
                                 <div class="cause-wrap">
                                     <figure class="m-0">
-                                        <img src="images/store-1.jpg" alt="">
+                                        <img src="images/store/6.jpg" alt="100 Wisdom Nuggets for a Successful Destiny">
 
                                         <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-                                            <a href="#" class="btn gradient-bg mr-2">Order Now</a>
+                                            <a href="https://www.amazon.com/100-Wisdom-Nuggets-Successful-Destiny/dp/0991035976" class="btn gradient-bg mr-2" target="_blank"><i class="fa fa-amazon"></i> Order Now <i class="fa fa-external-link"></i></a>
                                         </div><!-- .figure-overlay -->
                                     </figure>
 
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+                                            <h3 class="entry-title w-100 m-0"><a href="store/100-wisdom-nuggets-for-a-successful-destiny.html">100 Wisdom Nuggets for a Successful Destiny</a> <font color="purple" size="3px">$10.00</font></h3>
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content">
-                                            <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
+                                            <p class="m-0">This book will propel you to develop a passion for your Destiny, and enable you with the self-discipline that is necessary to accomplish it.</p>
                                             <br>
-                                            <a href="#" class="btn gradient-bg mr-2">Order Now</a>
+                                            <a href="https://www.amazon.com/100-Wisdom-Nuggets-Successful-Destiny/dp/0991035976" class="btn gradient-bg mr-2" target="_blank"><i class="fa fa-amazon"></i> Order Now <i class="fa fa-external-link"></i></a>
                                         </div><!-- .entry-content -->
                                     </div><!-- .cause-content-wrap -->
                                 </div><!-- .cause-wrap -->
@@ -505,22 +484,22 @@
                             <div class="swiper-slide">
                                 <div class="cause-wrap">
                                     <figure class="m-0">
-                                        <img src="images/store-2.jpg" alt="">
+                                        <img src="images/store/4.jpg" alt="Overcoming Life's Challenges">
 
                                         <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-                                            <a href="#" class="btn gradient-bg mr-2">Order Now</a>
+                                            <a href="https://www.amazon.com/Overcoming-Lifes-Challenges-Victoria-Michaels/dp/1625104553" class="btn gradient-bg mr-2" target="_blank"><i class="fa fa-amazon"></i> Order Now <i class="fa fa-external-link"></i></a>
                                         </div><!-- .figure-overlay -->
                                     </figure>
 
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+                                            <h3 class="entry-title w-100 m-0"><a href="store/overcoming-lifes-challenges.html">Overcoming Life's Challenges</a> <font color="purple" size="3px">$15.00</font></h3>
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content">
-                                            <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
+                                            <p class="m-0">What can equip the End-Time-Believers’ fight to victory? Prayer. Prayer keeps us firmly settled in the truth and immovable in our faith; it is what this wonderful book is heralding.</p>
                                             <br>
-                                            <a href="#" class="btn gradient-bg mr-2">Order Now</a>
+                                            <a href="https://www.amazon.com/Overcoming-Lifes-Challenges-Victoria-Michaels/dp/1625104553" class="btn gradient-bg mr-2" target="_blank"><i class="fa fa-amazon"></i> Order Now <i class="fa fa-external-link"></i></a>
                                         </div><!-- .entry-content -->
                                     </div><!-- .cause-content-wrap -->
                                 </div><!-- .cause-wrap -->
@@ -529,22 +508,22 @@
                             <div class="swiper-slide">
                                 <div class="cause-wrap">
                                     <figure class="m-0">
-                                        <img src="images/store-1.jpg" alt="">
+                                        <img src="images/store/5.jpg" alt="I am my Father's Daughter">
 
                                         <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-                                            <a href="#" class="btn gradient-bg mr-2">Order Now</a>
+                                            <a href="https://www.amazon.com/Fathers-Daughter-Scriptural-Meditation-Wholesomeness/dp/0988370743" class="btn gradient-bg mr-2" target="_blank"><i class="fa fa-amazon"></i> Order Now <i class="fa fa-external-link"></i></a>
                                         </div><!-- .figure-overlay -->
                                     </figure>
 
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title w-100 m-0"><a href="#">Education for all</a></h3>
+                                            <h3 class="entry-title w-100 m-0"><a href="store/i-am-my-fathers-daughter.html">I am my Father's Daughter</a> <font color="purple" size="3px">$19.95</font></h3>
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content">
-                                            <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
+                                            <p class="m-0">It's simple, yet powerful words; not only educate the believers as to their TRUE identity but also contain healing, restoration, freedom and fresh revelation on every page!</p>
                                             <br>
-                                            <a href="#" class="btn gradient-bg mr-2">Order Now</a>
+                                            <a href="https://www.amazon.com/Fathers-Daughter-Scriptural-Meditation-Wholesomeness/dp/0988370743" class="btn gradient-bg mr-2" target="_blank"><i class="fa fa-amazon"></i> Order Now <i class="fa fa-external-link"></i></a>
                                         </div><!-- .entry-content -->
                                     </div><!-- .cause-content-wrap -->
                                 </div><!-- .cause-wrap -->
@@ -553,22 +532,22 @@
                             <div class="swiper-slide">
                                 <div class="cause-wrap">
                                     <figure class="m-0">
-                                        <img src="images/store-2.jpg" alt="">
+                                        <img src="images/store/more.jpg" alt="Books by Dr. Victoria Michaels">
 
                                         <div class="figure-overlay d-flex justify-content-center align-items-center position-absolute w-100 h-100">
-                                            <a href="#" class="btn gradient-bg mr-2">Order Now</a>
+                                            <a href="store.html" class="btn gradient-bg mr-2">See More</a>
                                         </div><!-- .figure-overlay -->
                                     </figure>
 
                                     <div class="cause-content-wrap">
                                         <header class="entry-header d-flex flex-wrap align-items-center">
-                                            <h3 class="entry-title w-100 m-0"><a href="#">Bring water to the childrens</a></h3>
+                                            <h3 class="entry-title w-100 m-0"><a href="store.html">Visit our Store</a></h3>
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content">
-                                            <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.</p>
+                                            <p class="m-0">Want some more? Explore Our Store to see more books written by Dr. Victorira Michaels</p>
                                             <br>
-                                            <a href="#" class="btn gradient-bg mr-2">Order Now</a>
+                                            <a href="store.html" class="btn gradient-bg mr-2">Visit Store</a>
                                         </div><!-- .entry-content -->
                                     </div><!-- .cause-content-wrap -->
                                 </div><!-- .cause-wrap -->
@@ -595,9 +574,9 @@
             <div class="row align-items-end">
                 <div class="coL-12 col-lg-6">
                     <div class="section-heading">
-                        <h1 class="entry-title">Partner With Us</h1>
+                        <h1 class="entry-title">Watch Us Live</h1>
 
-                        <p class="mt-5">Dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris quis aliquam. Lorem ipsum dolor sit amet.</p>
+                        <p class="mt-5">You can livestream our programmes on your favorite <i class="fa fa-heart"></i> social media platform .</p>
                     </div><!-- .section-heading -->
                 </div><!-- .col -->
 
@@ -606,43 +585,30 @@
                         <div class="col-12 col-sm-4 mt-5 mt-lg-0">
                             <div class="counter-box">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <img src="images/teamwork.png" alt="">
+                                    <a href="https://www.facebook.com/Dr-Victoria-Michaels-88082592205/"><img src="images/facebook-logo.png" alt="Facebook Logo"></a>
                                 </div>
 
-                                <div class="d-flex justify-content-center align-items-baseline">
-                                    <div class="start-counter" data-to="120" data-speed="2000"></div>
-                                    <div class="counter-k">K</div>
-                                </div>
-
-                                <h3 class="entry-title">Children helped</h3><!-- entry-title -->
+                                <h3 class="entry-title">Facebook</h3><!-- entry-title -->
                             </div><!-- counter-box -->
                         </div><!-- .col -->
 
                         <div class="col-12 col-sm-4 mt-5 mt-lg-0">
                             <div class="counter-box">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <img src="images/donation.png" alt="">
+                                    <a href="https://www.youtube.com/user/propheticv/"><img src="images/youtube-symbol.png" alt="Youtube Symbol"></a>
                                 </div>
 
-                                <div class="d-flex justify-content-center align-items-baseline">
-                                    <div class="start-counter" data-to="79" data-speed="2000"></div>
-                                </div>
-
-                                <h3 class="entry-title">Water wells</h3><!-- entry-title -->
+                                <h3 class="entry-title">Youtube</h3><!-- entry-title -->
                             </div><!-- counter-box -->
                         </div><!-- .col -->
 
                         <div class="col-12 col-sm-4 mt-5 mt-lg-0">
                             <div class="counter-box">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <img src="images/dove.png" alt="">
+                                    <a href="https://www.instagram.com/dr.vmichaels/?hl=en"><img src="images/instagram-logo.png" alt="Instagram Logo"></a>
                                 </div>
 
-                                <div class="d-flex justify-content-center align-items-baseline">
-                                    <div class="start-counter" data-to="253" data-speed="2000"></div>
-                                </div>
-
-                                <h3 class="entry-title">Volunteeres</h3><!-- entry-title -->
+                                <h3 class="entry-title">Instagram</h3><!-- entry-title -->
                             </div><!-- counter-box -->
                         </div><!-- .col -->
                     </div><!-- .milestones -->
@@ -657,18 +623,9 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="foot-about">
-                            <h2><a class="foot-logo" href="index.html"><img src="images/foot-logo.png" alt=""></a></h2>
+                            <h1><a class="foot-logo" href="index.html"><img src="images/foot-logo.png" alt=""></a></h1>
 
-                            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris temp us vestib ulum mauris.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.Lorem ipsum dolo.</p>
-
-                            <ul class="d-flex flex-wrap align-items-center">
-                                <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
+                            <p>Dr. Victoria Michaels is a visionary and mastermind who focuses on empowering individuals to walk in their destiny. She's the founder and general overseer of <a href="http://gmworldwide.org"> <font color="white">Glorious Ministries Worldwide</font></a></p>
                         </div><!-- .foot-about -->
                     </div><!-- .col -->
 
@@ -676,37 +633,13 @@
                         <h2>Useful Links</h2>
 
                         <ul>
-                            <li><a href="#">About Dr. Victoria Michaels</a></li>
-                            <li><a href="#">Partner With Us</a></li>
-                            <li><a href="#">Visit Our Store</a></li>
-                            <li><a href="#">Read Our Blog</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Gallery</a></li>
+                            <li><a href="about.html">About Dr. Victoria Michaels</a></li>
+                            <li><a href="partner.html">Partner With Us</a></li>
+                            <li><a href="store.html">Visit Our Store</a></li>
+                            <li><a href="https://victoriamichaels.wordpress.com" target="_blank">Read Our Blog</a></li>
+                            <li><a href="portfolio.html">Gallery</a></li>
                             <li><a href="index.html">Home</a></li>
                         </ul>
-                    </div><!-- .col -->
-
-                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
-                        <div class="foot-latest-news">
-                            <h2>Latest News</h2>
-
-                            <ul>
-                                <li>
-                                    <h3><a href="#">A new cause to help</a></h3>
-                                    <div class="posted-date">MArch 12, 2018</div>
-                                </li>
-
-                                <li>
-                                    <h3><a href="#">We love to help people</a></h3>
-                                    <div class="posted-date">MArch 12, 2018</div>
-                                </li>
-
-                                <li>
-                                    <h3><a href="#">The new ideas for helping</a></h3>
-                                    <div class="posted-date">MArch 12, 2018</div>
-                                </li>
-                            </ul>
-                        </div><!-- .foot-latest-news -->
                     </div><!-- .col -->
 
                     <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
@@ -716,16 +649,24 @@
                             <ul>
                                 <li><i class="fa fa-phone"></i><span>(410) 488-1152</span></li>
                                 <li><i class="fa fa-envelope"></i><span><a href="mailto:info@victoriamichaels.org"> info@victoriamichaels.org</a></span></li>
-                                <li><i class="fa fa-map-marker"></i><span>Main Str. no 45-46, b3, 56832, Los Angeles, CA</span></li>
+                                <li><i class="fa fa-map-marker"></i><span>4845 Belair Road Baltimore, MD 21206</span></li>
+                                <li><i class="fa fa-web"></i><span><a href="contact-form.html">Contact Us</a></span></li>
                             </ul>
                         </div><!-- .foot-contact -->
+                    </div><!-- .col -->
 
-                        <div class="subscribe-form">
-                            <form class="d-flex flex-wrap align-items-center">
-                                <input type="email" placeholder="Your email">
-                                <input type="submit" value="send">
-                            </form><!-- .flex -->
-                        </div><!-- .search-widget -->
+                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
+                        <div class="foot-social">
+                            <h2>Connect With Us</h2>
+
+                            <ul>
+                                <li><a href="https://www.youtube.com/user/propheticv/"><i class="fa fa-youtube"> YouTube</i></a></li>
+                                <li><a href="https://www.facebook.com/Dr-Victoria-Michaels-88082592205/"><i class="fa fa-facebook"> Facebook</i></a></li>
+                                <li><a href="https://twitter.com/drvmichaels?lang=en"><i class="fa fa-twitter"> Twitter</i></a></li>
+                                <li><a href="https://www.instagram.com/dr.vmichaels/?hl=en"><i class="fa fa-instagram"> Instagram</i></a></li>
+                                <li><a href="https://www.periscope.com/DrVMichaels"><i class="fa fa-tv"> Periscope</i></a></li>
+                            </ul>
+                        </div><!-- .foot-latest-news -->
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .container -->
@@ -736,7 +677,7 @@
                 <div class="row">
                     <div class="col-12">
                         <p class="m-0">
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a href="http://victoriamichaels.org">Victoria Michaels</a></p>
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a href="http://victoriamichaels.org"><font color="purple">Dr. Victoria Michaels.</font></a></p>
                     </div><!-- .col-12 -->
                 </div><!-- .row -->
             </div><!-- .container -->
