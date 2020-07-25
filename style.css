@@ -791,7 +791,7 @@ ul.tabs-nav .tab-nav.active {
 
 .home-page-welcome img {
     display: block;
-    width: 100%;
+    width: auto;
     padding: 10px;
     border-radius: 20%;
     box-shadow: 0 0 10px #999999;
