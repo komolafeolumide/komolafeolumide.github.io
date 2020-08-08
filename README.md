@@ -100,7 +100,7 @@
 
                                 <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
                                     <a href="news.html" class="btn gradient-bg mr-2">Blog</a>
-                                    <a href="store.html" class="btn orange-border">Visit Store</a>
+                                    <a href="store.html" class="btn purple-border">Visit Store</a>
                                 </footer><!-- .entry-footer -->
                             </div><!-- .col -->
                         </div><!-- .row -->
@@ -126,7 +126,7 @@
 
                               <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
                                   <a href="news.html" class="btn gradient-bg mr-2">Blog</a>
-                                  <a href="store.html" class="btn orange-border">Visit Store</a>
+                                  <a href="store.html" class="btn purple-border">Visit Store</a>
                                 </footer><!-- .entry-footer -->
                             </div><!-- .col -->
                         </div><!-- .row -->
@@ -152,7 +152,7 @@
 
                                 <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
                                     <a href="store.html" class="btn gradient-bg mr-2">Visit Store</a>
-                                    <a href="#" class="btn orange-border">Read More</a>
+                                    <a href="#" class="btn purple-border">Read More</a>
                                 </footer><!-- .entry-footer -->
                             </div><!-- .col -->
                         </div><!-- .row -->
